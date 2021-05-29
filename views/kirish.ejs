@@ -1,0 +1,30 @@
+<%- include('parts/header') %> 
+
+<% var error %>
+
+<section class="vh-100 d-flex flex-column justify-content-center align-items-center registration">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card text-center p-4">
+                    <h1>Kirish uchun</h1>
+                    <strong class="text-muted registration-slogan">
+                        Socket.io
+                    </strong>
+                    <form class="mt-4" action="/kirish" method="POST">
+                        <% if(error) {%>
+                        <div class="alert alert-danger">
+                            <%= error %>
+                        </div>
+                        <% } %>
+                        <input type="number" maxlength="5" minlength="5" class="form-control mb-3" placeholder="Code" name="code" />
+                        <button type="submit" class="btn btn-primary w-100">
+                            Kirish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
